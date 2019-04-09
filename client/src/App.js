@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import SavedList from './Movies/SavedList';
-import MovieList from './Movies/MovieList';
-import Movie from './Movies/Movie';
+// import MovieList from './Movies/MovieList';
+// import Movie from './Movies/Movie';
+import MovieCard from './Movies/MovieCard';
 
 export default class App extends Component {
   constructor() {
@@ -22,8 +23,8 @@ export default class App extends Component {
     return (
         <div>
           <SavedList list={this.state.savedList} />
-          <Route path='/' exact component={MovieList} />
-          <Route path='/movies/:id' component={Movie} />
+          {/* <Route path='/' exact component={MovieList} /> */}
+          <Route path='/movies/:id' component={MovieCard} />
         </div>
     );
   }
