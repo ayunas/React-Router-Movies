@@ -1,0 +1,8 @@
+.movie-card button {
+
+    cursor: pointer;
+    background: skyblue;
+    color: black;
+    padding: 5px;
+    width: 100%;
+}
