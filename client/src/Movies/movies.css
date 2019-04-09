@@ -1,0 +1,9 @@
+.movie-card button {
+
+    border-radius: 10px;
+    cursor: pointer;
+    background: skyblue;
+    color: white;
+    padding: 5px;
+    width: 100%;
+}

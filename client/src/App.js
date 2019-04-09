@@ -29,6 +29,3 @@ export default class App extends Component {
   }
 }
 
-
-
-// {`/movies/${id}`} 
