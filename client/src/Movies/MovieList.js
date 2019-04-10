@@ -3,7 +3,6 @@ import './movies.css';
 import MovieDetails from './MovieDetails';
 
 const MovieList = props => {
-    console.log(props);
     return (
       <div className="movie-list">
         {props.movies.map( movie => (

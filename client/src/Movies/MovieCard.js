@@ -2,18 +2,22 @@ import React from 'react';
 import MovieDetails from './MovieDetails';
 
 const MovieCard = (props) => {
-  // console.log(props);
-  if (props.movie) {
+  
+  let id = props.match.params.id;
+
+  if (!props.movies[id]) {
     return <div>Loading movie information...</div>
   }
 
-    return (
-      <div className="movie-list">
-        {props.movies.map( movie => (
-          <MovieDetails key={movie.id} movie={movie} />
-        ))}
-      </div>
-    );
+  
+  // console.log(props);
+  console.log(id);
+  console.log(props.movies[id].title);
+  
+  // console.log(props.movies[id].title);
+
+        return <div>Movie: {props.movies[id].title} </div> 
+    // return <div>Movie: {props.movies[id].title} </div>;
   }
 
   export default MovieCard;
