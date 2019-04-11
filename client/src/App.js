@@ -33,14 +33,16 @@ class App extends React.Component {
   addToSavedList = movie => {
     console.log(movie);
     const savedList = this.state.savedList;
-    savedList.push(movie);
+    if (!savedList.includes(movie)) {
+      savedList.push(movie);
+    }
     this.setState({ savedList });
   };
 
   render() {
     return (
         <div>
-          <SavedList list={this.state.savedList} addSave={this.addToSavedList} />
+          <SavedList list={this.state.savedList} />
           <Route path='/' exact render={ (props) => <MovieList {...props} movies={this.state.movies} /> } />
           <Route path='/movies/:id' render={ (props) => <MovieCard {...props} movies={this.state.movies} addSave={this.addToSavedList} /> } />
         </div>
