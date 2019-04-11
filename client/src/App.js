@@ -31,7 +31,6 @@ class App extends React.Component {
   };
 
   addToSavedList = movie => {
-    console.log(movie);
     const savedList = this.state.savedList;
     if (!savedList.includes(movie)) {
       savedList.push(movie);
@@ -42,7 +41,7 @@ class App extends React.Component {
   render() {
     return (
         <div>
-          <SavedList list={this.state.savedList} />
+          <SavedList list={this.state.savedList} movies={this.state.movies} />
           <Route path='/' exact render={ (props) => <MovieList {...props} movies={this.state.movies} /> } />
           <Route path='/movies/:id' render={ (props) => <MovieCard {...props} movies={this.state.movies} addSave={this.addToSavedList} /> } />
         </div>
