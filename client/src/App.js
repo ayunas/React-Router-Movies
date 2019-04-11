@@ -4,9 +4,6 @@ import axios from 'axios';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import MovieCard from './Movies/MovieCard';
-import {withRouter} from 'react-router-dom';
-
-
 
 class App extends React.Component {
   constructor() {
@@ -24,8 +21,7 @@ class App extends React.Component {
   }
 
   fetchMovie = () => {
-    axios 
-      .get(`http://localhost:5000/api/movies/`)
+    axios .get(`http://localhost:5000/api/movies/`)
       .then(response => {
         this.setState(() => ({ movies: response.data }));
       })
@@ -41,6 +37,7 @@ class App extends React.Component {
   };
 
   render() {
+      
     return (
         <div>
           <SavedList list={this.state.savedList} />

@@ -14,11 +14,12 @@ body {
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+  line-height: 2;
 }
 
 .movie-director {
   padding: 4px 0;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .saved-list {
