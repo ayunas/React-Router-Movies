@@ -3,7 +3,20 @@
     cursor: pointer;
     background: skyblue;
     color: black;
-    padding: 5px;
+    padding: 25px;
     width: 100%;
+    font-size: 20px;
+    font-weight: bolder;
 }
 
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.saved-movie {
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+}

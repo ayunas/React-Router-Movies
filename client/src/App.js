@@ -31,19 +31,41 @@ class App extends React.Component {
   };
 
   addToSavedList = movie => {
+    console.log('addToSavedList triggered');
+    // console.log(this.state.savedList);
+
     const savedList = this.state.savedList;
+
     if (!savedList.includes(movie)) {
       savedList.push(movie);
+      this.setState({ savedList });
     }
-    this.setState({ savedList });
   };
 
+  removeFromSavedList = movie => {
+    console.log('removeSave has been triggered');
+    console.log(movie.id);
+
+    let list = this.state.savedList;
+    list.splice((movie.id-1),1);
+
+    this.setState({
+      savedList : list
+    })
+
+  }
+
+
   render() {
+    // console.log(this.state.savedList);
     return (
         <div>
-          <SavedList list={this.state.savedList} movies={this.state.movies} />
+          <SavedList list={this.state.savedList} 
+          movies={this.state.movies} 
+          removeSave={this.removeFromSavedList}/>
           <Route path='/' exact render={ (props) => <MovieList {...props} movies={this.state.movies} /> } />
-          <Route path='/movies/:id' render={ (props) => <MovieCard {...props} movies={this.state.movies} addSave={this.addToSavedList} /> } />
+          <Route path='/movies/:id' render={ (props) => <MovieCard {...props} movies={this.state.movies} addSave={this.addToSavedList} 
+          removeSave={this.removeFromSavedList}/> } />
         </div>
     );
   }
