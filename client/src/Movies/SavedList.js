@@ -12,23 +12,13 @@ export default class SavedList extends Component {
     console.log(this.props.list);
     return (
         <div className="saved-list">
-          <h3>Saved Movies:</h3>
-         <div>
+         <div className='savedMovies'>
+            <h3>Saved Movies:</h3>
             <Link to='/'><button className="home-button">Home</button></Link>
          </div>
           <div className='movies'>
-          {this.props.list.map(savedMovie => <Link to={`/movies/${savedMovie.id}`}>{savedMovie.title}</Link>)}
-          {/* {this.props.list !== undefined ? <div>{this.props.list[0].title}</div> : <div>no data</div>} */}
-           {/* {this.props.list && <div>{this.props.list[0].title}</div>} */}
-           {/* {this.props.list[0].title && <div>{this.props.list[0].title}</div>} */}
-{/*   
-            { this.props.list.map( savedMovie => { <Link 
-            to={`/movies/${savedMovie.id}`} /> 
-            <span className="saved-movie">{movie.title}</span>
-            </Link> }
-            )} */}
+            {this.props.list.map(savedMovie => <Link className='saved-movie' to={`/movies/${savedMovie.id}`}>{savedMovie.title}</Link>)}
           </div>
-          
         </div>
     );
   }
