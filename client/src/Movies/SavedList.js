@@ -9,12 +9,13 @@ export default class SavedList extends Component {
   }
 
   render() {
-    console.log(this.props.list);
+    console.log(this.props);
     return (
         <div className="saved-list">
          <div className='savedMovies'>
             <h3>Saved Movies:</h3>
             <Link to='/'><button className="home-button">Home</button></Link>
+            <Link to='/'><button className="home-button" onClick={ ()=> this.props.removeAll()}>Remove All</button></Link>
          </div>
           <div className='movies'>
             {this.props.list.map(savedMovie => <Link className='saved-movie' to={`/movies/${savedMovie.id}`}>{savedMovie.title}</Link>)}

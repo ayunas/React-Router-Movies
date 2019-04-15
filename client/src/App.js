@@ -64,8 +64,15 @@ class App extends React.Component {
     this.setState({
       savedList : remove
     })
-
   }
+
+ removeAll = () => {
+
+    this.setState({
+      savedList : []
+    })
+
+ }
 
 
   render() {
@@ -74,7 +81,9 @@ class App extends React.Component {
         <div>
           <SavedList list={this.state.savedList} 
           movies={this.state.movies} 
-          removeSave={this.removeFromSavedList}/>
+          removeSave={this.removeFromSavedList}
+          removeAll={this.removeAll}
+          />
           <Route path='/' exact render={ (props) => <MovieList {...props} movies={this.state.movies} /> } />
           <Route path='/movies/:id' render={ (props) => <MovieCard {...props} movies={this.state.movies} addSave={this.addToSavedList} 
           removeSave={this.removeFromSavedList}/> } />
