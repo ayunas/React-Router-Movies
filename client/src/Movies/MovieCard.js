@@ -3,7 +3,7 @@ import './movies.css';
 
 
 const MovieCard = (props) => {
-    
+    // console.log(props);
   let id = props.match.params.id;
 
   if (!props.movies[id]) {
@@ -13,6 +13,7 @@ const MovieCard = (props) => {
     return (
       <div className='movie-card'>
           <button onClick={ () => {return props.addSave(props.movies[id])}}>Add to Your Saved Movies</button>
+          <button onClick={ () => {return props.removeSave(props.movies[id])}}>Remove from Your Saved Movies</button>
           <div className='movie-director'><strong>Movie:</strong> {props.movies[id].title} </div> 
           <div className='movie-metascore'><strong>Metascore:</strong> {props.movies[id].metascore} </div> 
           <div className='movie-director'><strong>Director:</strong> {props.movies[id].director} </div> 

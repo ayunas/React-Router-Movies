@@ -7,7 +7,7 @@ export default class Movie extends Component {
     this.state = {
       movie: null
     };
-    console.log(props);
+    // console.log(props);
   }
 
   componentDidMount() {
