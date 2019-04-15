@@ -32,6 +32,8 @@ class App extends React.Component {
 
   addToSavedList = movie => {
     console.log('addToSavedList triggered');
+    console.log(movie.id,movie.title);
+
     // console.log(this.state.savedList);
 
     const savedList = this.state.savedList;
@@ -44,13 +46,23 @@ class App extends React.Component {
 
   removeFromSavedList = movie => {
     console.log('removeSave has been triggered');
-    console.log(movie.id);
+    console.log(movie.id,movie.title);
+    console.log('saved movie list: ', this.state.savedList);
 
-    let list = this.state.savedList;
-    list.splice((movie.id-1),1);
+    let remove = this.state.savedList.filter( savedMovie => savedMovie.title !== movie.title )
+
+    console.log(remove);
+
+    // for (let i = 0; i < this.state.savedList.length; i++) {
+    //   if (movie.title === this.state.savedList[i].title)
+    // }
+
+    // let list = this.state.savedList;
+    // list.splice((movie.id),1);
+    // console.log(list);
 
     this.setState({
-      savedList : list
+      savedList : remove
     })
 
   }
