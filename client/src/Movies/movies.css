@@ -9,6 +9,10 @@
     font-weight: bolder;
 }
 
+.movie-card {
+    text-align: center;
+}
+
 .movies {
     display: flex;
     flex-wrap: wrap;
@@ -20,3 +24,32 @@
     padding: 10px;
     font-size: 20px;
 }
+
+.home-button {
+  padding: 5px 10px;
+  background-color: lightskyblue;
+  margin: 10px;
+}
+
+h3 {
+    display: inline-block;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+header {
+    display: block;
+    text-align: center;
+    font-size: 35px;
+    margin: 10px 10%;
+    border: 5px solid black;
+    background-color: skyblue;
+    padding: 20px;
+    height: 300px;
+    border-radius: 20px;
+  }

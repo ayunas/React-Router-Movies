@@ -4,6 +4,9 @@ import axios from 'axios';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import MovieCard from './Movies/MovieCard';
+import Header from './Movies/Header';
+import './index.css'
+
 
 class App extends React.Component {
   constructor() {
@@ -78,7 +81,8 @@ class App extends React.Component {
   render() {
     // console.log(this.state.savedList);
     return (
-        <div>
+        <div clasName='App'>
+          <Header/>
           <SavedList list={this.state.savedList} 
           movies={this.state.movies} 
           removeSave={this.removeFromSavedList}
